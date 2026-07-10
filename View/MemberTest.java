@@ -1,26 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package View;
 
-import Library.ManageLibrary;
+import Member.MemberList;
 import java.util.Scanner;
 
 /**
  *
  * @author MySimp
  */
-public class LibraryTest {
+public class MemberTest {
     public static void main(String[] args) {
-        ManageLibrary manageLibrary = new ManageLibrary("", "");
         Scanner sc = new Scanner(System.in);
-
+        MemberList memberList = new MemberList();
+        
         int choice = 0;
         while (choice != 4) {
-            System.out.println("\n===== LIBRARY MENU =====");
-            System.out.println("1. Input library info");
-            System.out.println("2. Display library stats");
+            System.out.println("\n===== MEMBER MENU =====");
+            System.out.println("1. Add member");
+            System.out.println("2. Display all");
+            System.out.println("3. Delete member");
             System.out.print("Choose: ");
 
             try {
@@ -31,8 +28,9 @@ public class LibraryTest {
             }
             
             switch (choice) {
-                case 1: manageLibrary.getLib(); break;
-                case 2: manageLibrary.displayLibrary(); break;
+                case 1: memberList.inputMembers(); break;
+                case 2: memberList.displayAll(); break;
+                case 3: memberList.deleteMemberByID(); break;
                 default: System.out.println("Invalid choice");
             }
         }
